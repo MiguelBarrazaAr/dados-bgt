@@ -1,0 +1,97 @@
+// iniciamos las variables:
+sound tirar;
+int cantDados = 1;
+int x=0;
+int[] dado = {4,6,8,10,12,20,100};
+int[] dadoMesa(1);
+
+void main  ()
+{
+show_game_window("dados");
+
+// cargamos los sonidos:
+tirar.load("dado.ogg");
+// ejecutamos para que el jaws no intersepte las teclas:
+if(install_keyhook() == false) leer("desactive Jaws  para poder jugar correctamente.");
+
+// iniciamos el bucle principal del programa:
+while(true)
+ {
+// espacio: lanzar dados.
+if(key_down(KEY_SPACE)) {
+lanzarDado();
+}
+
+// enter: repetir ultima tirada.
+if(key_pressed(KEY_RETURN)) {
+leerMesa();
+}
+
+// flecha derecha: restamos 1 al pool de dados.
+if(key_pressed(KEY_LEFT)) {
+if(cantDados > 1) {
+cantDados--;
+leer(cantDados+" dados");
+dadoMesa.resize(cantDados);
+} else {
+leer("no puedes quedarte sin dados");
+}
+}
+
+// flecha derecha: sumamos 1 al pool de dados.
+if(key_pressed(KEY_RIGHT)) {
+cantDados++;
+leer(cantDados+" dados");
+dadoMesa.resize(cantDados);
+}
+
+// flecha arriba o abajo: cambiamos el tipo de dado:
+if(key_pressed(KEY_UP)) 
+{
+x=(x+1)%dado.length();
+leer(dado[x]+" caras");
+}
+
+if(key_pressed(KEY_DOWN)) 
+{
+x=(x+dado.length()-1)%dado.length();
+leer(dado[x]+" caras");
+}
+
+// con escape salimos:
+if(key_pressed(KEY_ESCAPE))
+{
+exit();
+}
+
+}
+}
+
+// lanzamos los dados:
+void lanzarDado()
+{
+tirar.stop();
+wait(100);
+tirar.play();
+wait(500);
+for(int i=0; i<cantDados; i++) {
+dadoMesa[i] = random(1, dado[x]);
+leer(dadoMesa[i]);
+wait(500);
+}
+
+}
+
+void leerMesa()
+{
+for(int i=0; i<cantDados; i++) {
+leer(dadoMesa[i]);
+wait(700);
+}
+}
+
+
+void leer(string texto)
+{
+screen_reader_speak(JAWS, texto);
+}
