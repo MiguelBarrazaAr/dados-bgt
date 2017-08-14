@@ -1,7 +1,18 @@
 # dados-bgt
 
-  Lanzador de dados, util para probar si estás jugando rol o necesitas dados virtuales para juegos de mesa.
-  Hecho con bgt (Blastbay Game Toolkit) sin parte gráfica.
+Version: 0.1
+Autor: Miguel Barraza
+
+licencia:
+Este programa es software libre; Puede redistribuirlo y / o modificarlo    Bajo los términos de la Licencia PÚBLICA GENERAL GNU 3.0
+
+License:
+    This program is free software; you can redistribute it and/or modify    it under the terms of the GNU GENERAL PUBLIC LICENSE 3.0.
+
+Descripción:
+permite realizar tiradas de dados de múltiples caras, admites dados de: 4, 6, 8, 10, 12 y 100 caras.
+Cada tirada puede ser personalizada y es verbalizado por el lector de pantalla que estés utilizando.
+  Hecho con bgt (Blastbay Game Toolkit). Esta herramienta (lenguaje) no posee parte gráfica.
 
 # teclas rápidas:
 

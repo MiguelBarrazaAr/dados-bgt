@@ -1,4 +1,20 @@
-// iniciamos las variables:
+﻿/*
+Coding: UTF-8
+
+Dados-bgt
+Version 0.1
+Escrito por Miguel Barraza
+última actualización: 14/08/2017
+licencia: Este programa es software libre; Puede redistribuirlo y / o modificarlo    Bajo los términos de la Licencia PÚBLICA GENERAL GNU 3.0
+
+Dados-bgt
+Written by Miguel Barraza
+Last updated on 08/14/2017
+License: This program is free software; you can redistribute it and/or modify    it under the terms of the GNU GENERAL PUBLIC LICENSE 3.0.
+
+*/
+
+
 sound tirar;
 int cantDados = 1;
 int x=0;
